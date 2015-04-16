@@ -39,15 +39,15 @@
         				*如果value属性不写，则默认迭代栈顶元素
         				*value值如果为top也是为迭代栈顶元素
         	 -->
-        	<%-- <s:iterator value="#departmentList">
+        	<s:iterator value="#departmentList">
 			<tr class="TableDetail1 template">
 				<td><s:property value="dname"/></td>
 				<td><s:property value="description"/></td>
-				<td><a onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" href="#">删除</a>
+				<td><a  href="#">删除</a>
 					<a href="saveUI.html">修改</a>
 				</td>
 			</tr>
-			</s:iterator> --%>
+			</s:iterator>
 			<!-- list中还有list -->
 			<%-- <s:iterator>
 				<s:iterator>
@@ -62,12 +62,12 @@
 				</s:iterator>
 			</s:iterator> --%>
 			<!-- map中含有list -->
-			<s:iterator value="#map">
+			<%-- <s:iterator value="#map">
 				<s:property value="key"/>
 				<s:iterator value="value">
 					<s:property value="dname"/>
 				</s:iterator>
-			</s:iterator>
+			</s:iterator> --%>
         </tbody>
     </table>
     
