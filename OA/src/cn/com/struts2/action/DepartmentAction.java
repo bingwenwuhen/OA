@@ -18,10 +18,9 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class DepartmentAction extends BaseAction implements ModelDriven<Department> {
+public class DepartmentAction extends BaseAction<Department> {
 	private DepartmentService	departmentService;
 
-	private Department model=new Department();
 	
 	public DepartmentService getDepartmentService() {
 		return departmentService;
@@ -110,7 +109,8 @@ public class DepartmentAction extends BaseAction implements ModelDriven<Departme
 	}
 	
 	public String deleteDepartment(){
-		this.departmentService.deleteDepartmentById(this.model.getDid(), DeleteMode.DEL_PRE_RELEASE);
+		System.out.println(this.getModel().getDid());
+		this.departmentService.deleteDepartmentById(this.getModel().getDid(), DeleteMode.DEL_PRE_RELEASE);
 		return action2action;
 	}
 	
@@ -152,12 +152,5 @@ public class DepartmentAction extends BaseAction implements ModelDriven<Departme
 		this.departmentService.updateDepartment(department);
 		return action2action;
 	}
-	
-	@Override
-	public Department getModel() {
-		
-		return this.model;
-	}
-	
-	
+
 }

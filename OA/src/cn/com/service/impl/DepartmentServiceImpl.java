@@ -20,7 +20,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public void saveDepartment(Department department) {
-		this.departmentDao.saveDepartment(department);
+		this.departmentDao.saveEntry(department);
 	}
 
 	@Override

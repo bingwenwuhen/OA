@@ -1,5 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ include file="/WEB-INF/jsp/common/common.jsp"%>
+<script language="javascript" src="${pageContext.request.contextPath}/fckeditor/fckeditor.js"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/jquery-fckeditor.js"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/js/department_add.js"></script>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>

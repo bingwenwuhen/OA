@@ -12,11 +12,18 @@
            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
            http://www.springframework.org/schema/tx
            http://www.springframework.org/schema/tx/spring-tx-2.5.xsd ">
-	<bean id="departmentDao" class="cn.com.dao.impl.DepartmentDaoImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
-		</property>
+           <!-- 一种解决方案 -->
+           <!-- 
+	<bean id="departmentDao" class="cn.com.dao.impl.DepartmentDaoImpl" parent="baseDaoImpl">
 	</bean>
+	 -->
+	 
+	 <!-- 第二种解决方案 -->
+	 <bean id="departmentDao" class="cn.com.dao.impl.DepartmentDaoImpl">
+	 	<property name="hibernateTemplate">
+	 		<ref bean="hibernateTemplate"/>
+	 	</property>
+	 </bean>
 	<bean id="departmentService" class="cn.com.service.impl.DepartmentServiceImpl">
 		<property name="departmentDao">
 			<ref bean="departmentDao"/>

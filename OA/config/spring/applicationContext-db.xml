@@ -34,4 +34,17 @@
     	<aop:pointcut expression="execution(* cn.com.service.impl.*.*(..))" id="perform"/>
     	<aop:advisor advice-ref="tx" pointcut-ref="perform"/>
     </aop:config>
+    
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory"/>
+    	</property>
+    </bean>
+    <!-- 
+    <bean id="baseDaoImpl" class="cn.com.dao.base.impl.BaseDaoImpl" abstract="true">
+    	<property name="hibernateTemplate">
+    		<ref bean="hibernateTemplate"></ref>
+    	</property>
+    </bean>
+     -->
 </beans>

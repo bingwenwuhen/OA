@@ -7,15 +7,16 @@ import java.util.Set;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import cn.com.dao.DepartmentDao;
+import cn.com.dao.base.impl.BaseDaoImpl;
 import cn.com.domain.Department;
 import cn.com.domain.User;
 import cn.com.utils.DeleteMode;
 
-public class DepartmentDaoImpl extends HibernateDaoSupport implements DepartmentDao {
+public class DepartmentDaoImpl extends BaseDaoImpl<Department> implements DepartmentDao<Department> {
 
 	@Override
 	public void saveDepartment(Department department) {
-		this.getHibernateTemplate().save(department);
+		this.saveEntry(department);
 	}
 
 	@Override
