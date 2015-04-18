@@ -42,7 +42,7 @@
         	<s:iterator value="#departmentList">
 			<tr class="TableDetail1 template">
 				<td><s:property value="dname"/></td>
-				<td><s:property value="description"/></td>
+				<td><s:property value="description" escape="false"/></td>
 					<!-- 在struts2的标签中只能用ognl表达式，不能使用el表达式 -->
 				<td><s:a action="departmentAction_deleteDepartment?did=%{did}">删除</s:a>
 					<s:a action="departmentAction_updateUI?did=%{did}">修改</s:a>
