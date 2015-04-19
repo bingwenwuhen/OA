@@ -12,4 +12,5 @@
 	 <constant name="struts.ui.theme" value="simple"></constant>
     <include file="struts2/struts-person.xml"></include>
      <include file="struts2/struts-department.xml"></include>
+     <include file="struts2/struts-post.xml"></include>
 </struts>	
