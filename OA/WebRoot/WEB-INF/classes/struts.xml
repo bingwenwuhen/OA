@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 
+		把struts的请求委托给spring管理，
+			作用：创建action的过程由spring处理，其他的还是由struts2自己处理
+	 -->
+	 <constant name="struts.objectFactory" value="spring"></constant>
+	 <constant name="struts.ui.theme" value="simple"></constant>
+    <include file="struts2/struts-person.xml"></include>
+     <include file="struts2/struts-department.xml"></include>
+</struts>	
