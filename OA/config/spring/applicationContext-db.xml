@@ -12,39 +12,24 @@
            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
            http://www.springframework.org/schema/tx
            http://www.springframework.org/schema/tx/spring-tx-2.5.xsd ">
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-		<property name="configLocation">
-			<value>classpath:hibernate/hibernate.cfg.xml</value>
-		</property>
-	</bean>
-	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory"/>
-		</property>
-	</bean>
-	<tx:advice id="tx" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="save*" read-only="false"/>
-     		<tx:method name="update*" read-only="false"/>
-     		<tx:method name="delete*" read-only="false"/>
-     		<tx:method name="get*" read-only="true"/>
-		</tx:attributes>
-	</tx:advice>
-    <aop:config>
-    	<aop:pointcut expression="execution(* cn.com.service.impl.*.*(..))" id="perform"/>
-    	<aop:advisor advice-ref="tx" pointcut-ref="perform"/>
-    </aop:config>
-    
-    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
-    	<property name="sessionFactory">
-    		<ref bean="sessionFactory"/>
-    	</property>
-    </bean>
-    <!-- 
-    <bean id="baseDaoImpl" class="cn.com.dao.base.impl.BaseDaoImpl" abstract="true">
-    	<property name="hibernateTemplate">
-    		<ref bean="hibernateTemplate"></ref>
-    	</property>
-    </bean>
-     -->
+	<!-- 
+		导入类扫描的注解解析器和事务的注解解析器
+	 -->
+	 <context:component-scan base-package="cn.com"></context:component-scan>
+	 <tx:annotation-driven transaction-manager="transactionManager"/>
+	 <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory"/>
+	 	</property>
+	 </bean>
+	 <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	 	<property name="configLocation">
+	 		<value>classpath:hibernate/hibernate.cfg.xml</value>
+	 	</property>
+	 </bean>
+	 <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory"/>
+	 	</property>
+	 </bean>
 </beans>

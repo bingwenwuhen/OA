@@ -26,16 +26,9 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	}
 	
 	
-	//@Resource(name="hibernateTemplate")
+	@Resource(name="hibernateTemplate")
 	public HibernateTemplate hibernateTemplate;
-	public HibernateTemplate getHibernateTemplate() {
-		return hibernateTemplate;
-	}
-
-	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-		this.hibernateTemplate = hibernateTemplate;
-	}
-
+	
 	@Override
 	public Collection<T> getAllEntry() {
 		return this.hibernateTemplate.find("from "+this.clazz.getName());

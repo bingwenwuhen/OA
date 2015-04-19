@@ -13,6 +13,9 @@
            http://www.springframework.org/schema/tx
            http://www.springframework.org/schema/tx/spring-tx-2.5.xsd ">
 		<import resource="applicationContext-db.xml"/>
+		<!-- 准备搭建注解 -->
+		<!-- 
         <import resource="applicationContext-person.xml"/>
         <import resource="applicationContext-department.xml"/>
+         -->
 </beans>

@@ -6,8 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import cn.com.domain.Department;
 import cn.com.service.DepartmentService;
@@ -18,17 +22,12 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+@Controller("departmentAction")
+@Scope("prototype")
 public class DepartmentAction extends BaseAction<Department> {
+	@Resource(name="departmentService")
 	private DepartmentService	departmentService;
 
-	
-	public DepartmentService getDepartmentService() {
-		return departmentService;
-	}
-
-	public void setDepartmentService(DepartmentService departmentService) {
-		this.departmentService = departmentService;
-	}
 	
 	public String getAllDepartment(){
 		Collection<Department> departmentList=this.departmentService.getAllDepartment();

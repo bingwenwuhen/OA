@@ -3,20 +3,19 @@ package cn.com.service.impl;
 import java.io.Serializable;
 import java.util.Collection;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import cn.com.dao.DepartmentDao;
 import cn.com.domain.Department;
 import cn.com.service.DepartmentService;
 import cn.com.utils.DeleteMode;
-
+@Service("departmentService")
 public class DepartmentServiceImpl implements DepartmentService {
+	@Resource(name="departmentDao")
 	private DepartmentDao departmentDao;
-	public DepartmentDao getDepartmentDao() {
-		return departmentDao;
-	}
-
-	public void setDepartmentDao(DepartmentDao departmentDao) {
-		this.departmentDao = departmentDao;
-	}
+	
 
 	@Override
 	public void saveDepartment(Department department) {
@@ -25,22 +24,21 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@Override
 	public void updateDepartment(Department department) {
-		this.departmentDao.updateDepartment(department);
+		this.departmentDao.updateEntry(department);
 	}
 
 	@Override
 	public void deleteDepartmentById(Serializable id,String deleteMode) {
-		this.departmentDao.deleteDepartmentById(id,deleteMode);
+		//this.departmentDao.deleteDepartmentById(id,deleteMode);
+		this.departmentDao.deleteEntry(id);
 	}
 
-	@Override
 	public Collection<Department> getAllDepartment() {
-		return this.departmentDao.getAllDepartment();
+		return this.departmentDao.getAllEntry();
 	}
 
-	@Override
 	public Department getDepartmentById(Serializable id) {
-		return this.departmentDao.getDepartmentById(id);
+		return (Department) this.departmentDao.getEntryById(id);
 	}
 
 }
