@@ -19,6 +19,7 @@
 	<property name="connection.password">zx69728537</property>
 	<property name="show_sql">true</property>
 	<property name="hbm2ddl.auto">update</property>
+	<property name="connection.autocommit">true</property>
 	<mapping resource="cn/com/domain/Person.hbm.xml" />
 	<mapping resource="cn/com/domain/Department.hbm.xml" />
 	<mapping resource="cn/com/domain/Post.hbm.xml" />
