@@ -14,4 +14,10 @@
      <include file="struts2/struts-department.xml"></include>
      <include file="struts2/struts-post.xml"></include>
      <include file="struts2/struts-user.xml"></include>
+     
+     <package name="ajax" extends="struts-default">
+     	<result-types>
+     		<result-type name="ajaxResult" class="cn.com.result.AjaxResult"></result-type>
+     	</result-types>
+     </package>
 </struts>	

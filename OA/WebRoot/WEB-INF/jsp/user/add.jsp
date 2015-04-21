@@ -42,7 +42,7 @@
                     </tr>
                     <tr><td>用户名</td>
                         <td><s:textfield name="username" cssClass="InputStyle"></s:textfield>
-							（登录名要唯一）
+							<s:label id="message"></s:label>
 						</td>
                     </tr>
 					<tr><td>性别</td>

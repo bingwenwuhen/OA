@@ -15,4 +15,6 @@ public interface UserService {
 	public User getUserById(Serializable id);
 	
 	public void updateUser(User user);
+	
+	public User getUserByUsername(String username);
 }

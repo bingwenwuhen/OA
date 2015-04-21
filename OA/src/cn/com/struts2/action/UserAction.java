@@ -35,6 +35,12 @@ public class UserAction extends BaseAction<User> {
 	
 	private Long[] pids;
 	
+	private String message;
+	
+	public String getMessage() {
+		return message;
+	}
+
 	public Long getDid() {
 		return did;
 	}
@@ -148,5 +154,17 @@ public class UserAction extends BaseAction<User> {
 		user.setPosts(posts);
 		this.userService.updateUser(user);
 		return action2action;
+	}
+	
+	public String checkUsername(){
+		User user=this.userService.getUserByUsername(this.getModel().getUsername());
+		if(user==null){
+			ActionContext.getContext().getValueStack().push("该用户名可以使用");
+			//this.message="该用户名可以使用";
+		}else{
+			ActionContext.getContext().getValueStack().push("该用户名已存在");
+			//this.message="该用户名已存在";
+		}
+		return SUCCESS;
 	}
 }

@@ -9,5 +9,5 @@ public interface UserDao<T> extends BaseDao<T> {
 	
 	public Collection<User> getUsers();
 	
-	
+	public User getUserByUsername(String username);
 }

@@ -18,4 +18,15 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao<User> {
 		return new HashSet<User>(userList);
 	}
 
+	@Override
+	public User getUserByUsername(String username) {
+		List<User> userList=this.hibernateTemplate.find("from User where username=?",username);
+		if(userList.size()==0){
+			return null;
+		}else{
+			return userList.get(0);
+		}
+		
+	}
+
 }

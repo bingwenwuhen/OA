@@ -11,4 +11,9 @@
    			<result name="action2action" type="redirectAction">userAction_getAllUser.action</result>
    		</action>
    </package>
+   <package name="userjson" namespace="/" extends="ajax">
+   		<action name="userJSONAction_*" method="{1}" class="userAction">
+   			<result type="ajaxResult"></result>
+   		</action>
+   </package>
 </struts>	
