@@ -24,6 +24,7 @@
 	<mapping resource="cn/com/domain/Department.hbm.xml" />
 	<mapping resource="cn/com/domain/Post.hbm.xml" />
 	<mapping resource="cn/com/domain/User.hbm.xml" />
+	<mapping resource="cn/com/domain/Menuitem.hbm.xml" />
 
 
 </session-factory>

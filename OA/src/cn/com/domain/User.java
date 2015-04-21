@@ -64,4 +64,12 @@ public class User implements Serializable {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	private Set<Menuitem> menuitems;
+	public Set<Menuitem> getMenuitems() {
+		return menuitems;
+	}
+	public void setMenuitems(Set<Menuitem> menuitems) {
+		this.menuitems = menuitems;
+	}
 }

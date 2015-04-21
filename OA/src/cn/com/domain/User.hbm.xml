@@ -24,5 +24,11 @@
 			</key>
 			<many-to-many class="cn.com.domain.Post" column="pid"></many-to-many>
 		</set>
+		<set name="menuitems" table="user_menuitem">
+			<key>
+				<column name="uid"></column>
+			</key>
+			<many-to-many class="cn.com.domain.Menuitem" column="mid"></many-to-many>
+		</set>
 	</class>
 </hibernate-mapping>
