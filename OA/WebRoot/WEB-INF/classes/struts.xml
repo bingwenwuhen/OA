@@ -14,6 +14,7 @@
      <include file="struts2/struts-department.xml"></include>
      <include file="struts2/struts-post.xml"></include>
      <include file="struts2/struts-user.xml"></include>
+     <include file="struts2/struts-menuitem.xml"></include>
      
      <package name="ajax" extends="struts-default">
      	<result-types>
