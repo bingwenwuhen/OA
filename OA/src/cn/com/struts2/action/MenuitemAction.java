@@ -31,4 +31,9 @@ public class MenuitemAction extends BaseAction<Menuitem> {
 		this.menuitemList=this.menuitemService.getAllMenuitem();
 		return SUCCESS;
 	}
+	
+	public String showMenuitemsById(){
+		this.menuitemList=this.menuitemService.getMenuitemsByPid(this.getModel().getPid());
+		return SUCCESS;
+	}
 }

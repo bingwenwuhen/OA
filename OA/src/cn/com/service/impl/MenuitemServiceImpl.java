@@ -17,5 +17,9 @@ public class MenuitemServiceImpl implements MenuitemService {
 	public Collection<Menuitem> getAllMenuitem() {
 		return this.menuitemDao.getAllEntry();
 	}
+	@Override
+	public Collection<Menuitem> getMenuitemsByPid(Long pid) {
+		return this.menuitemDao.getMenuitemsByPid(pid);
+	}
 
 }
