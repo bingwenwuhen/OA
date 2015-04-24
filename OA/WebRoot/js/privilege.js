@@ -43,7 +43,7 @@ var privilege={
 			 */
 			$("#savePrivilege").unbind("click");
 			$("#savePrivilege").bind("click",function(){
-				
+				privilege.pFunction.privilegeTree.savePrivilege();
 			});
 		},
 		/*
@@ -133,7 +133,22 @@ var privilege={
 				 * 针对某一用户保存权限
 				 */
 				savePrivilege:function(){
-					
+					var checkedNodes=privilege.pFunction.privilegeTree.zTree.getCheckedNodes(true);
+					var mids="";
+					for(var i=0;i<checkedNodes.length;i++){
+						if(i<checkedNodes.length-1){
+							mids=mids+checkedNodes[i].mid+",";
+						}else{
+							mids=mids+checkedNodes[i].mid;
+						}
+					}
+					var parameter={
+							uid:privilege.data.user.uid,
+							mids:mids
+					};
+					$.post("privilegeAction_savePrivilege.action",parameter,function(data){
+						
+					});
 				},
 				/*
 				 * 全选复选框的实现

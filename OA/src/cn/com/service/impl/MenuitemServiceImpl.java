@@ -1,6 +1,7 @@
 package cn.com.service.impl;
 
 import java.util.Collection;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -20,6 +21,10 @@ public class MenuitemServiceImpl implements MenuitemService {
 	@Override
 	public Collection<Menuitem> getMenuitemsByPid(Long pid) {
 		return this.menuitemDao.getMenuitemsByPid(pid);
+	}
+	@Override
+	public Set<Menuitem> getMenuitemsByIDS(Long[] ids) {
+		return this.menuitemDao.getMenuitemsByIDS(ids);
 	}
 
 }

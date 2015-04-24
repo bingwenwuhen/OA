@@ -3,6 +3,8 @@ package cn.com.domain;
 import java.io.Serializable;
 import java.util.Set;
 
+import org.apache.struts2.json.annotations.JSON;
+
 public class Menuitem implements Serializable {
 	private Long mid;
 	private Long pid;		//父节点ID
@@ -17,6 +19,8 @@ public class Menuitem implements Serializable {
 		this.checked = checked;
 	}
 	private Set<User> users;
+	
+	@JSON(serialize=false)
 	public Set<User> getUsers() {
 		return users;
 	}
