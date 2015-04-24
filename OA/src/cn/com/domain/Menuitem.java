@@ -9,6 +9,13 @@ public class Menuitem implements Serializable {
 	private String name;		//树上的节点的名称
 	private Boolean isParent;		//是否为文件夹节点
 	private String icon;			//图标图片的路径
+	private Boolean checked;
+	public Boolean getChecked() {
+		return checked;
+	}
+	public void setChecked(Boolean checked) {
+		this.checked = checked;
+	}
 	private Set<User> users;
 	public Set<User> getUsers() {
 		return users;

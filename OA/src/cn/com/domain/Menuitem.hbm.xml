@@ -11,6 +11,7 @@
 		<property name="isParent" type="java.lang.Boolean"></property>
 		<property name="icon" type="java.lang.String" length="100"></property>
 		<property name="name" type="java.lang.String" length="20"></property>
+		<property name="checked" type="java.lang.Boolean"></property>
 		<set name="users" table="user_menuitem">
 			<key>
 				<column name="mid"></column>
