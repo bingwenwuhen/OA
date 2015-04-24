@@ -55,7 +55,7 @@ public class PrivilegeAction extends BaseAction<Menuitem> {
 	}
 	
 	public String showPrivilege(){
-		this.privilegeList=this.privilegeService.getPrivileges();
+		this.privilegeList=this.privilegeService.getPrivileges(this.uid);
 		return SUCCESS;
 	}
 	

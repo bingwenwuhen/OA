@@ -16,8 +16,8 @@ public class PrivilegeServiceImpl implements PrivilegeService {
 	private PrivilegeDao privilegeDao;
 	
 	@Override
-	public Collection<Menuitem> getPrivileges() {
-		return this.privilegeDao.getAllEntry();
+	public Collection<Menuitem> getPrivileges(Long uid) {
+		return this.privilegeDao.getMenuitemByUID(uid);
 	}
 
 }

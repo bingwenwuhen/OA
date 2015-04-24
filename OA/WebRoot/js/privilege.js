@@ -105,7 +105,10 @@ var privilege={
 				 * 显示权限树
 				 */
 				loadPrivilegeTree:function(){
-					$.post("privilegeAction_showPrivilege.action",null,function(data){
+					var parameter={
+						uid:privilege.data.user.uid	
+					};
+					$.post("privilegeAction_showPrivilege.action",parameter,function(data){
 						privilege.pFunction.privilegeTree.zTree=$("#privilegeTree").zTree(privilege.pFunction.privilegeTree.setting,data.privilegeList);
 						/*
 						 * 这里是设置全选按钮默认状态的最佳位置
