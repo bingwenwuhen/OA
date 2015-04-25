@@ -18,6 +18,7 @@
      <include file="struts2/struts-privilege.xml"></include>
      <include file="struts2/struts-login.xml"></include>
      <include file="struts2/struts-forward.xml"></include>
+     <include file="struts2/struts-kynamic.xml"></include>
      <package name="ajax" extends="struts-default">
      	<result-types>
      		<result-type name="ajaxResult" class="cn.com.result.AjaxResult"></result-type>

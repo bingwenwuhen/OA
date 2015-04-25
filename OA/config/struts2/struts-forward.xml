@@ -9,6 +9,7 @@
   		<result name="top">WEB-INF/jsp/frame/top.jsp</result>
   		<result name="right">WEB-INF/jsp/frame/right.jsp</result>
   		<result name="bottom">WEB-INF/jsp/frame/bottom.jsp</result>
+  		<result name="kynamic">WEB-INF/jsp/kynamic/kynamic.jsp</result>
   	</action>
   </package>
 </struts>	
