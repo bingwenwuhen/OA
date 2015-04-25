@@ -12,6 +12,8 @@
 		<property name="icon" type="java.lang.String" length="100"></property>
 		<property name="name" type="java.lang.String" length="20"></property>
 		<property name="checked" type="java.lang.Boolean"></property>
+		<property name="url" type="java.lang.String" length="200"></property>
+		<property name="target" type="java.lang.String" length="100"></property>
 		<set name="users" table="user_menuitem">
 			<key>
 				<column name="mid"></column>

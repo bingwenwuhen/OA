@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 import cn.com.dao.MenuitemDao;
 import cn.com.dao.base.impl.BaseDaoImpl;
 import cn.com.domain.Menuitem;
+import cn.com.domain.User;
+import cn.com.utils.OAUtils;
 
 @Repository("menuitemDao")
 public class MenuitemImpl extends BaseDaoImpl<Menuitem> implements MenuitemDao<Menuitem> {
@@ -35,6 +37,17 @@ public class MenuitemImpl extends BaseDaoImpl<Menuitem> implements MenuitemDao<M
 		
 		List<Menuitem> menuitemList=this.hibernateTemplate.find(stringBuffer.toString());
 		return new HashSet<Menuitem>(menuitemList);
+	}
+
+	@Override
+	public Collection<Menuitem> getMenuitemsByUser() {
+		User user=OAUtils.fromSession();
+		if("admin".equals(user.getUsername())){
+			return this.getAllEntry(); 
+		}else{
+			return this.hibernateTemplate.find("from Menuitem m inner join fetch m.users u where u.uid=?",user.getUid());
+		}
+		
 	}
 
 }

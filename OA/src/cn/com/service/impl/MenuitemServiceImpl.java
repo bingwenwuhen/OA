@@ -26,5 +26,9 @@ public class MenuitemServiceImpl implements MenuitemService {
 	public Set<Menuitem> getMenuitemsByIDS(Long[] ids) {
 		return this.menuitemDao.getMenuitemsByIDS(ids);
 	}
+	@Override
+	public Collection<Menuitem> getMenuitemsByUser() {
+		return this.menuitemDao.getMenuitemsByUser();
+	}
 
 }

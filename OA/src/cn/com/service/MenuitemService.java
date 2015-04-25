@@ -11,4 +11,6 @@ public interface MenuitemService {
 	public Collection<Menuitem> getMenuitemsByPid(Long pid);
 	
 	public Set<Menuitem> getMenuitemsByIDS(Long[] ids);
+	
+	public Collection<Menuitem> getMenuitemsByUser();
 }

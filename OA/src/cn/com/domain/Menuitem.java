@@ -12,6 +12,23 @@ public class Menuitem implements Serializable {
 	private Boolean isParent;		//是否为文件夹节点
 	private String icon;			//图标图片的路径
 	private Boolean checked;
+	
+	private String url;
+	private String target;
+	
+	
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getTarget() {
+		return target;
+	}
+	public void setTarget(String target) {
+		this.target = target;
+	}
 	public Boolean getChecked() {
 		return checked;
 	}

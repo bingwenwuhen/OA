@@ -10,4 +10,6 @@ public interface MenuitemDao<T> extends BaseDao<T> {
 	public Collection<Menuitem> getMenuitemsByPid(Long pid);
 	
 	public Set<Menuitem> getMenuitemsByIDS(Long[] ids);
+	
+	public Collection<Menuitem> getMenuitemsByUser();
 }
