@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.com.dao.KynamicDao;
 import cn.com.domain.Kynamic;
+import cn.com.domain.Version;
 import cn.com.service.KynamicService;
 
 @Service("kynamicService")
@@ -45,6 +46,21 @@ public class KynamicServiceImpl implements KynamicService {
 	@Override
 	public Kynamic getParentNode(Long kid) {
 		return this.kynamicDao.getParentNode(kid);
+	}
+
+	@Transactional(readOnly=false)
+	public void updateNode(Kynamic kynamic) {
+		this.kynamicDao.updateNode(kynamic);
+	}
+
+	@Override
+	public Kynamic getKynamicById(Long id) {
+		return (Kynamic) this.kynamicDao.getEntryById(id);
+	}
+
+	@Override
+	public Collection<Version> getVersionByKid(Long kid) {
+		return this.kynamicDao.getVersionByKid(kid);
 	}
 
 

@@ -4,11 +4,13 @@ import java.util.Collection;
 
 import javax.annotation.Resource;
 
+import org.apache.struts2.json.annotations.JSON;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cn.com.domain.Kynamic;
+import cn.com.domain.Version;
 import cn.com.service.KynamicService;
 import cn.com.struts2.action.base.BaseAction;
 
@@ -27,6 +29,12 @@ public class KynamicAction extends BaseAction<Kynamic> {
 	private String message;
 	private Long kid;
 	private Kynamic kynamic;
+	private Collection<Version> versionList;
+	
+	public Collection<Version> getVersionList() {
+		return versionList;
+	}
+
 	public Kynamic getKynamic() {
 		return kynamic;
 	}
@@ -76,6 +84,18 @@ public class KynamicAction extends BaseAction<Kynamic> {
 	
 	public String showParentNode(){
 		this.kynamic=this.kynamicService.getParentNode(this.getModel().getKid());
+		return SUCCESS;
+	}
+	
+	public String updateKynamic(){
+		Kynamic kynamic=this.kynamicService.getKynamicById(this.getModel().getKid());
+		kynamic.setName(this.getModel().getName());
+		this.kynamicService.updateNode(kynamic);
+		return SUCCESS;
+	}
+	
+	public String showVersionsByKid(){
+		this.versionList=this.kynamicService.getVersionByKid(this.getModel().getKid());
 		return SUCCESS;
 	}
 }	
