@@ -5,7 +5,7 @@ import org.apache.struts2.ServletActionContext;
 import cn.com.domain.User;
 
 public class OAUtils {
-	public static Long[] S	(String ids){
+	public static Long[] String2Longs(String ids){
 		String[] s=ids.split(",");
 		Long[] aa=new Long[s.length];
 		int index=0;
